@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotal = document.querySelector('.cart-total h3');
     
     // Function to render the cart items
-    function renderCartItems() {
+    function renderCartItems(){
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         cartContainer.innerHTML = ''; // Clear existing items
         let totalAmount = 0; // Reset total amount
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantityInput = document.getElementById(`quantity${index}`);
             totalAmount += item.price * quantityInput.value;
         });
-
+        console.log("total",totalAmount)
         cartTotal.textContent = `Total: $${totalAmount}`;
     }
 
@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial call to render items when the page loads
     renderCartItems();
+    calculateTotal();
 });
 
 
