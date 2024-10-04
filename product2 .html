@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product2.css">
+    <title>Shoe Product Detail Page</title>
+    <style>
+        .mini-images {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .mini-images img {
+            width: 60px; 
+            cursor: pointer;
+            margin-bottom: 10px;
+            border: 2px solid transparent; 
+        }
+        .mini-images img:hover {
+            border: 2px solid #000;
+        }
+        .product-image img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body style="width: 100%; height: 100vh;">
+    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <div class="mini-images" style="padding: 20px 0px; padding-left: 40px;">
+            <img src="image/shoe52.jpg" style="width: 80px; height: 100px; object-fit: cover; border-radius: 10px;" alt="Stylish Running Shoe" onclick="changeImage('image/shoe52.jpg')">
+            <img src="image/shoe67.jpg" style="width: 80px; height: 100px; object-fit: cover; border-radius: 10px;" alt="Alternative Image 1" onclick="changeImage('image/shoe67.jpg')">
+            <img src="image/shoe45.jpg" style="width: 80px; height: 100px; object-fit: cover; border-radius: 10px;" alt="Alternative Image 2" onclick="changeImage('image/shoe45.jpg')">
+            <img src="image/shoe25.jpg" style="width: 80px; height: 100px; object-fit: cover; border-radius: 10px;" alt="Alternative Image 3" onclick="changeImage('image/shoe25.jpg')">
+        </div>
+        <div class="product-image">
+            <img id="main-image" src="image/shoe25.jpg" alt="Stylish Running Shoe">
+        </div>
+        <div class="product-details">
+            <h1>Sports Shoes</h1>
+            <p class="description">
+                Material typeEthylene Vinyl Acetate<br>
+                Closure typeLace-Up<br>
+                Heel typeNo Heel<br>
+                Water resistance levelNot Water Resistant<br>
+                Sole materialEthylene Vinyl Acetate<br>
+                StyleWalking<br>
+                Country of OriginIndia</p>
+            <p class="price">$120</p>
+            <div class="size-selection">
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Sports Shoes','image/shoe25.jpg',120)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
+        }
+    </script>
+       <script src="cart.js"></script>
+</body>
+</html>
+
